@@ -15,7 +15,11 @@
 #
 
 ## overlays
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+# The F320 uses different overlays so use these only if
+# we're NOT building F320
+ifneq ($(TARGET_DEVICE),f320)
+    DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+endif
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -26,10 +30,16 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.g2.rc:root/init.g2.rc \
     $(LOCAL_PATH)/init.g2.usb.rc:root/init.g2.usb.rc \
-    $(LOCAL_PATH)/ueventd.g2.rc:root/ueventd.g2.rc \
-    $(LOCAL_PATH)/fstab.g2:root/fstab.g2
+    $(LOCAL_PATH)/ueventd.g2.rc:root/ueventd.g2.rc
+
+# F320 requires different versions of these for SD card access
+# so use these only if we're NOT building F320
+ifneq ($(TARGET_DEVICE),f320)
+    PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/init.g2.rc:root/init.g2.rc \
+        $(LOCAL_PATH)/fstab.g2:root/fstab.g2
+endif
 
 
 PRODUCT_COPY_FILES += \
