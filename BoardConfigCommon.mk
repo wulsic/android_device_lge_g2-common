@@ -156,7 +156,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TW_BRIGHTNESS_PATH := "/sys/devices/mdp.0/qcom\x2cmdss_fb_primary.175/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
-TW_INCLUDE_JB_CRYPTO := true
+TW_INCLUDE_L_CRYPTO := true
 TARGET_RECOVERY_INITRC := device/lge/g2-common/twrp/init.rc
 
 # Post recovery boot script
