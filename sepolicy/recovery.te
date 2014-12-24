@@ -1,0 +1,10 @@
+# recovery console (used in recovery init.rc for /sbin/recovery)
+
+# Declare the domain unconditionally so we can always reference it
+# in neverallow rules.
+type recovery, domain;
+
+# Allow recovery to set permissive mode
+permissive recovery;
+
+
