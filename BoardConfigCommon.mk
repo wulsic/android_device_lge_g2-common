@@ -166,8 +166,8 @@ PRODUCT_COPY_FILES += device/lge/g2-common/twrp/postrecoveryboot.sh:recovery/roo
 TARGET_USERIMAGES_USE_F2FS := true
 
 ##  Functions to properly set config and files based on existence of an External SD Card
-# Board has an External SD Card (i.e. F320)
-ifeq ($(TARGET_DEVICE),f320)
+# Board has an External SD Card (i.e. f320 or lgl22)
+ifneq ($(filter f320 lgl22,$(TARGET_DEVICE)),)
     BOARD_HAS_NO_REAL_SDCARD := false
     TW_EXTERNAL_STORAGE_PATH := "/external_sd"
     TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
