@@ -135,13 +135,12 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
-<<<<<<< HEAD
 TARGET_USES_LOGD := false
 
 TARGET_SPECIFIC_HEADER_PATH := device/lge/g2-common/include
 
 BOARD_USES_LEGACY_MMAP := true
-=======
+
 ###                                     ###
 ### Specific Options for TWRP Building  ###
 ###                                     ###
@@ -181,5 +180,3 @@ else
     BOARD_HAS_NO_REAL_SDCARD := true
     PRODUCT_COPY_FILES += device/lge/g2-common/twrp/twrp.g2.no_sd.fstab:recovery/root/etc/twrp.fstab
 endif
-
->>>>>>> 96623d2... Add TWRP support and necessary files.
