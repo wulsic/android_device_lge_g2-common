@@ -59,9 +59,6 @@ PRODUCT_COPY_FILES += \
 
 # TWRP
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
-    $(LOCAL_PATH)/twrp/init.recovery.g2.rc:recovery/root/init.recovery.g2.rc \
-    $(LOCAL_PATH)/twrp/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/twrp/sign:recovery/root/res/sign
 
 # These are the hardware-specific features
