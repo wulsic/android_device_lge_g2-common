@@ -163,6 +163,9 @@ TARGET_RECOVERY_INITRC := device/lge/g2-common/twrp/init.rc
 # Post recovery boot script
 PRODUCT_COPY_FILES += device/lge/g2-common/twrp/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
+# Add touch to wake as its own init
+PRODUCT_COPY_FILES += device/lge/g2-common/twrp/init.recovery.touchtowake.rc:recovery/root/init.recovery.touchtowake.rc
+
 # Enable f2fs filesystem tools
 TARGET_USERIMAGES_USE_F2FS := true
 

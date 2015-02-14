@@ -1,5 +1,7 @@
 import /init.recovery.${ro.hardware}.rc
+import /init.recovery.touchtowake.rc
 import /init.recovery.sd_card.rc
+
 
 on early-init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
@@ -42,14 +44,12 @@ on fs
 
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 18D1
-    write /sys/class/android_usb/android0/idProduct D002
+    write /sys/class/android_usb/android0/idProduct 4EE2
     write /sys/class/android_usb/android0/f_ffs/aliases adb
-    write /sys/class/android_usb/android0/functions adb
+    write /sys/class/android_usb/android0/functions mtp,adb
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    chown root shell /sys/devices/virtual/input/lge_touch/touch_gesture
-    write /sys/devices/virtual/input/lge_touch/touch_gesture 1
 
 
 on boot
@@ -88,7 +88,7 @@ on property:sys.storage.ums_enabled=1
 
 on property:sys.storage.ums_enabled=0
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/functions adb
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable ${service.adb.root}
 
 on property:sys.usb.config=none
