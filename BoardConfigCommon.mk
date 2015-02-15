@@ -164,7 +164,7 @@ TARGET_RECOVERY_INITRC := device/lge/g2-common/twrp/init.rc
 PRODUCT_COPY_FILES += device/lge/g2-common/twrp/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 # Add touch to wake as its own init
-PRODUCT_COPY_FILES += device/lge/g2-common/twrp/init.recovery.touchtowake.rc:recovery/root/init.recovery.touchtowake.rc
+PRODUCT_COPY_FILES += device/lge/g2-common/twrp/init.recovery.touchtowake.rc:recovery/root/etc/init.recovery.touchtowake.rc
 
 # Enable f2fs filesystem tools
 TARGET_USERIMAGES_USE_F2FS := true
@@ -177,7 +177,7 @@ ifneq ($(filter f320 lgl22,$(TARGET_DEVICE)),)
     TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 
     PRODUCT_COPY_FILES += device/lge/g2-common/twrp/twrp.g2.has_sd.fstab:recovery/root/etc/twrp.fstab
-    PRODUCT_COPY_FILES += device/lge/g2-common/twrp/init.recovery.sd_card.rc:recovery/root/init.recovery.sd_card.rc
+    PRODUCT_COPY_FILES += device/lge/g2-common/twrp/init.recovery.sd_card.rc:recovery/root/etc/init.recovery.sd_card.rc
 
 # OR
 # Board does not have an External SD Card

@@ -1,6 +1,6 @@
 import /init.recovery.${ro.hardware}.rc
-import /init.recovery.touchtowake.rc
-import /init.recovery.sd_card.rc
+import /etc/init.recovery.touchtowake.rc
+import /etc/init.recovery.sd_card.rc
 
 
 on early-init
