@@ -187,5 +187,5 @@ MR_INIT_DEVICES := device/lge/g2-common/mr_init_devices.c
 MR_DPI := xhdpi
 MR_FSTAB := device/lge/g2-common/twrp/twrp.g2.no_sd.fstab
 MR_KEXEC_MEM_MIN := 0x04000000
-MR_DEVICE_HOOKS := device/lge/g2-common/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 3
+MR_KEXEC_DTB := true
+MR_USE_MROM_FSTAB := true
