@@ -34,12 +34,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.g2.usb.rc:root/init.g2.usb.rc \
     $(LOCAL_PATH)/ueventd.g2.rc:root/ueventd.g2.rc
 
-# Use common init and fstab for all devices other than f320 and lgl22
-# f320 and lgl22 require different versions of these for SD card access
-ifneq ($(filter d800 d801 d802 d803 l01f ls980 vs980,$(TARGET_DEVICE)),)
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/init.g2.rc:root/init.g2.rc \
-        $(LOCAL_PATH)/fstab.g2:root/fstab.g2
+# F320 requires different versions of these for SD card access
+# so use these only if we're NOT building F320
+ifneq ($(TARGET_DEVICE),f320)
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/init.g2.rc:root/init.g2.rc \
+$(LOCAL_PATH)/fstab.g2:root/fstab.g2
 endif
 
 
