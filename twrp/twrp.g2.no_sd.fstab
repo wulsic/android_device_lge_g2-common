@@ -12,6 +12,7 @@
 /rpm2 emmc /dev/block/mmcblk0p31 flags=backup=0;subpartitionof=/rpm1
 /tz emmc /dev/block/platform/msm_sdcc.1/by-name/tz flags=backup=0;display=tz
 /usb_otg vfat /dev/block/sda1 /dev/block/sda flags=display="USB-OTG";storage;removable
+/sns ext4 /dev/block/platform/msm_sdcc.1/by-name/sns flags=backup=1;display=Sensors
 
 # Can cause crashes
 #/misc emmc /dev/block/platform/msm_sdcc.1/by-name/misc
