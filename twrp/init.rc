@@ -1,7 +1,7 @@
 import /init.recovery.${ro.hardware}.rc
 import /etc/init.recovery.touchtowake.rc
 import /etc/init.recovery.sd_card.rc
-
+# Remove, export EXTERNAL_STORAGE /sdcard, below
 
 on early-init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
@@ -23,6 +23,7 @@ on init
     export LD_LIBRARY_PATH .:/sbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
 
     mkdir /boot
     mkdir /recovery
@@ -38,6 +39,8 @@ on init
     write /proc/sys/kernel/panic_on_oops 1
 
 on fs
+    mount pstore pstore /sys/fs/pstore
+
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
