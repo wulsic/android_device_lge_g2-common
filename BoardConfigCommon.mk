@@ -195,6 +195,6 @@ MR_KEXEC_MEM_MIN := 0x04000000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
 MR_DEVICE_HOOKS_VER := 4
-MR_DEVICE_RECOVERY_HOOKS := device/lge/g2-common/multirom/mr_hooks.c
+MR_DEVICE_HOOKS := device/lge/g2-common/multirom/mr_hooks.c
 MR_CONTINUOUS_FB_UPDATE := true
 MR_PIXEL_FORMAT := "RGB_565"
