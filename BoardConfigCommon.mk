@@ -186,9 +186,16 @@ endif
 
 # MultiROM
 MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/lge/g2-common/mr_init_devices.c
+MR_INIT_DEVICES := device/lge/g2-common/multirom/mr_init_devices.c
+MR_RD_ADDR := 0x05200000
 MR_DPI := xhdpi
+MR_DPI_MUL := 1.5
 MR_FSTAB := device/lge/g2-common/twrp/twrp.g2.no_sd.fstab
+MR_DPI_FONT := 340
 MR_KEXEC_MEM_MIN := 0x04000000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
+MR_DEVICE_HOOKS_VER := 4
+MR_DEVICE_RECOVERY_HOOKS := device/lge/g2-common/multirom/mr_hooks.c
+MR_CONTINUOUS_FB_UPDATE := true
+MR_PIXEL_FORMAT := "RGB_565"
