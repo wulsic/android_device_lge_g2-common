@@ -5,7 +5,6 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
     ro.opengles.version=196608 \
-    ro.loki_enabled=1
 
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
