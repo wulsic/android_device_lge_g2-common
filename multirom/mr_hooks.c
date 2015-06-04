@@ -195,3 +195,4 @@ int mrom_hook_allow_incomplete_fstab(void)
 {
     return 1;
 }
+#endif /* MR_DEVICE_HOOKS >= 4 */
